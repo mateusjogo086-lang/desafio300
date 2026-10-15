@@ -216,8 +216,7 @@ button{font:inherit;cursor:pointer}
   function buildDoc(){
     var json = JSON.stringify({marked:Array.from(marked).sort(function(a,b){return a-b;})});
     var body = SRC.replace(/(<script type="application\/json" id="state">)[\s\S]*?(<\/script>)/, function(_,a,b){ return a+json+b; });
-    return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+HEADSTYLE+'</style></head><body>'+body+'<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(function(){});}</script>
-</body></html>';
+    return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+HEADSTYLE+'</style></head><body>'+body+'</body></html>';
   }
 
   function scheduleSave(){
@@ -258,5 +257,6 @@ button{font:inherit;cursor:pointer}
 })();
 </script>
 
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(function(){});}</script>
 </body>
 </html>

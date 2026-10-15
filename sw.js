@@ -1,4 +1,4 @@
-const CACHE = 'desafio300-v1';
+const CACHE = 'desafio300-v2';
 const FILES = ['./', './index.html', './manifest.json', './icon.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)));
